@@ -1,136 +1,49 @@
-<!-- <template>
-  <a-table :columns="columns" :data-source="dataSource" bordered>
-    <template
-      v-for="col in [
-        'rowID',
-        'TicketNo',
-        'RegisterNo',
-        'DateStamp',
-        'TicketFine',
-        'DateAccident',
-        'TimeAccident',
-        'PlacInciden',
-      ]"
-      #[col]="{ text, record }"
-      :key="col"
-    >
-      <div>
-        <a-input
-          v-if="editableData[record.key]"
-          v-model:value="editableData[record.key][col]"
-          style="margin: -5px 0"
-        />
-        <template v-else>
-          {{ text }}
-        </template>
-      </div>
-    </template>
-    <template #operation="{ record }">
-      <div class="editable-row-operations">
-        <span v-if="editableData[record.key]">
-          <a @click="save(record.key)">Save</a>
-          <a-popconfirm title="Sure to cancel?" @confirm="cancel(record.key)">
-            <a>Cancel</a>
-          </a-popconfirm>
-        </span>
-        <span v-else>
-          <a @click="edit(record.key)">Edit</a>
-        </span>
-      </div>
-    </template>
-  </a-table>
+
+<template>
+  <a-table :dataSource="dataSource" :columns="columns" />
 </template>
 <script>
-import { cloneDeep } from "lodash-es";
-import { defineComponent, reactive, ref } from "vue";
-const columns = [
-  {
-    title: "rowID",
-    dataIndex: "rowID",
-    width: "10%",
-    slots: {
-      customRender: "rowID",
-    },
-  },
-  {
-    title: "TicketNo",
-    dataIndex: "TicketNo",
-    width: "15%",
-    slots: {
-      customRender: "TicketNo",
-    },
-  },
-  {
-    title: "address",
-    dataIndex: "address",
-    width: "40%",
-    slots: {
-      customRender: "address",
-    },
-  },
-  {
-    title: "DateStamp",
-    dataIndex: "DateStamp",
-    slots: {
-      customRender: "DateStamp",
-    },
-  },
-  {
-    title: "Operation",
-    dataIndex: "Operation",
-    slots: {
-      customRender: "Operation",
-    },
-  },
-];
-const data = [];
-for (let i = 0; i < 100; i++) {
-  data.push({
-    rowID: i.toString(),
-    TicketNo: `00000${i}`,
-    RegisterNo: `บพ ${i}`,
-    address: `London Park no. ${i}`,
-    DateStamp: "2023-04-10",
-  });
-}
-
-export default defineComponent({
+export default {
   setup() {
-    const dataSource = ref(data);
-    const editableData = reactive({});
-    const edit = (key) => {
-      editableData[key] = cloneDeep(
-        dataSource.value.filter((item) => key === item.key)[0]
-      );
-    };
-    const save = (key) => {
-      Object.assign(
-        dataSource.value.filter((item) => key === item.key)[0],
-        editableData[key]
-      );
-      delete editableData[key];
-    };
-    const cancel = (key) => {
-      delete editableData[key];
-    };
     return {
-      dataSource,
-      columns,
-      editingKey: "",
-      editableData,
-      edit,
-      save,
-      cancel,
+      dataSource: [
+        {
+          key: "1",
+          name: "Mike",
+          age: 32,
+          address: "10 Downing Street",
+        },
+        {
+          key: "2",
+          name: "John",
+          age: 42,
+          address: "10 Downing Street",
+        },
+      ],
+
+      columns: [
+        {
+          title: "Name",
+          dataIndex: "name",
+          key: "name",
+        },
+        {
+          title: "Age",
+          dataIndex: "age",
+          key: "age",
+        },
+        {
+          title: "Address",
+          dataIndex: "address",
+          key: "address",
+        },
+      ],
     };
   },
-});
+};
 </script>
-<style scoped>
-.editable-row-operations a {
-  margin-right: 8px;
-}
-</style> -->
-<template>
+<!-- close 21-04-2023 -->
+<!-- <template>
   <a-table :columns="columns" :data-source="dataSource" bordered>
     <template
       v-for="col in [
@@ -279,4 +192,5 @@ export default defineComponent({
 .editable-row-operations a {
   margin-right: 8px;
 }
-</style>
+</style> -->
+<!-- ------------------------------------------------------------------------------------------------- -->

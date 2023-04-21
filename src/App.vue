@@ -66,10 +66,10 @@
               <router-link to="/" class="card-footer-item"
                 >StartOCR</router-link
               >
-              <router-link to="/about" class="card-footer-item"
+              <router-link to="/stepverify" class="card-footer-item"
                 >Verify</router-link
               >
-              <router-link to="/HelloView" class="card-footer-item"
+              <router-link to="/InsertData" class="card-footer-item"
                 >Insert Data</router-link
               >
             </footer>

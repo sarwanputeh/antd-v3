@@ -17,10 +17,14 @@ import {
   Table,
   Form,
   InputNumber,
-    Tag,
+  Tag,
   Menu,
   Steps,
   Tabs,
+  Input,
+  DatePicker,
+  Select,
+ 
  
   
    
@@ -46,5 +50,9 @@ app.use(Tag);
 app.use(Menu);
 app.use(Steps);
 app.use(Tabs);
+app.use(Input);
+app.use(DatePicker);
+app.use(Select);
+
 
 app.mount('#app');
