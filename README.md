@@ -27,3 +27,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ##Demo 
 Link: https://antd-v3.vercel.app/
+
+
+##Slide 
+[Presentation1.pptx](https://github.com/sarwanputeh/antd-v3/files/11306478/Presentation1.pptx)
